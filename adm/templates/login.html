@@ -1,0 +1,177 @@
+{% extends "main.html" %}
+
+{% block content %}
+<title>{{page_title}}</title>
+<section class="vh-100 position-relative" style="background-color: #3A0930">
+                
+  <div class="position-absolute w-100 h-100" style="filter: blur(10px);"></div>
+  <div class="container py-5 h-100 position-relative">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <div class="card" style="border-radius: 1rem;">
+          <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <img src="https://padariabrasileira.com.br/wp-content/uploads/2020/05/acai_grande.jpg"
+                    alt="login form" class="img-fluid w-100 h-100" style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                </div>
+                
+            <div class="col-md-6 col-lg-7 d-flex align-items-center">
+              <div class="card-body p-4 p-lg-5 text-black">
+                
+
+                <form name="form-login" id="formlogin" method="post" action="/logar/">
+                  {% if msg %}
+                  <div class="alert {{class}}">
+                    {{msg}}
+                  </div>
+                  {% endif %}
+                  {% csrf_token %}
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-0" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0" style="color: #3A0930;">Dolce Vita Açaí e Sorveteria</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Faça login em sua conta</h5>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="emaillogin" type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Endereço de E-mail</label>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="senhalogin" type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Senha</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Login</button>
+                  </div>
+
+                  <a class="small text-muted" href="/reset_password/" id="esquecersenha">Esqueceu sua senha?</a>
+                  <p class="mb-5 pb-lg-2" style="color: #393f81;">Não tem uma conta? <a id="registerLink" href="#!"
+                    style="color: #393f81;">Registre-se aqui!</a></p>
+                  <a href="#!" class="small text-muted">Termo de Serviço.</a>
+                  <a href="#!" class="small text-muted">Política de Privacidade</a>
+                  
+                </form>
+
+                <form name="form-users" id="formUsers" method="post" action="/CadastroUsuario/">
+                  {% if msg %}
+                  <div class="alert {{class}}">
+                    {{msg}}
+                  </div>
+                  {% endif %}
+
+                  {% csrf_token %}
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Logo</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Faça seu cadastro</h5>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="nome" type="text" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Nome Completo</label>
+                  </div>
+                  
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="usuario" type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Endereço de E-mail</label>
+                  </div>
+                  
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="senha" type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Senha</label>
+                  </div>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input name="confirmasenha" type="password" id="form2Example27" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example27">Confirme sua Senha</label>
+                  </div>
+
+                  <div class="pt-1 mb-4">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Criar Usuário</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!" id="contaexist">Já tem uma conta?</a>
+                </form>
+
+                {% comment %} <form name="form-esquecer" id="formesquecer" method="post">
+                  {% csrf_token %}
+                  {{ form.as_p }} 
+                  <div class="d-flex align-items-center mb-3 pb-1">
+                    <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                    <span class="h1 fw-bold mb-0">Logo</span>
+                  </div>
+
+                  <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Esqueci minha senha</h5>
+
+                  <div data-mdb-input-init class="form-outline mb-4">
+                    <input type="email" id="form2Example17" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example17">Endereço de E-mail</label>
+                  </div> 
+
+                  <div class="pt-1 mb-4">
+                    <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" type="submit">Recuperar Senha</button>
+                  </div>
+
+                  <a class="small text-muted" href="#!" id="returnlogin">Voltar</a>
+                  
+                </form>  {% endcomment %}
+
+                
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script para alternar entre os formulários -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Esconde o formulário de cadastro ao carregar a página
+    document.getElementById('formUsers').classList.add('d-none');
+    //document.getElementById('formesquecer').classList.add('d-none');
+    
+    // Quando o link "Registre-se aqui!" for clicado, alterna os formulários
+    document.getElementById('registerLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Oculta o formulário de login e exibe o de cadastro
+      document.getElementById('formlogin').classList.add('d-none');
+      document.getElementById('formUsers').classList.remove('d-none');
+    });
+
+    document.getElementById('contaexist').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Oculta o formulário de login e exibe o de cadastro
+      document.getElementById('formlogin').classList.remove('d-none');
+      document.getElementById('formUsers').classList.add('d-none');
+    });
+    
+    //document.getElementById('esquecersenha').addEventListener('click', function(e) {
+    //  e.preventDefault();
+      
+      // Oculta o formulário de login e exibe o de cadastro
+   //   document.getElementById('formlogin').classList.add('d-none');
+   //   document.getElementById('formesquecer').classList.remove('d-none');
+  //  });
+
+    document.getElementById('returnlogin').addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      // Oculta o formulário de login e exibe o de cadastro
+      document.getElementById('formlogin').classList.remove('d-none');
+     // document.getElementById('formesquecer').classList.add('d-none');
+    });
+
+  });
+</script>
+{% endblock %}
