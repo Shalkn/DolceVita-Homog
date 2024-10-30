@@ -24,6 +24,21 @@ git config user.name "escolher um nome para identificação"
 
 Criar repositório no github, colocando apenas o nome que quer.
 
+git add . (adiciona todos os arquivos)
+git commit -m "nome do commit"
+git push (envia todos os arquivos para seu repositório)
+Caso você não tenha o repositório é necessário adicionar o repositório do github
+
+git remote add orgin "link do repositório"
+
+Caso dê erro: possivelmente é necessário criar uma branch, visto que é o tipo de Classificação do git sobre versionamento, o caso mais comum é usar master eu uso main
+
+git push --set-upstream origin main
+
+É possível que peça para que você faça o login no git hub, caso não tiver realizado anteriormente.
+
+
+
 Estrtura REACT JS
 /src/
     /components/
