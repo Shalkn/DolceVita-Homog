@@ -1,0 +1,727 @@
+@font-face {
+    font-family: 'WC Mano Negra Bold';
+    src: url('./fonts/WCManoNegraBoldBta.ttf') format('tff'),
+        url('./fonts/WCManoNegraBoldBta.otf') format('otf'),
+        url('./fonts/WCManoNegraBta.otf') format('otf'),
+        url('./fonts/WCManoNegraBta.ttf') format('tff'),
+        url('./fonts/WCManoNegraBoldBta.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    font-family: 'WC Mano Negra Bold', sans-serif;
+    user-select: none;
+
+}
+
+#home,
+#product,
+#information,
+#contact {
+    font-size: 28px;
+}
+
+html {
+    background-color: #ffeee2;
+}
+
+.header {
+    width: 100dvw;
+    height: 100px;
+    top: 5%;
+    /* background-color: #ffeee2; */
+    background-color: transparent;
+    position: fixed;
+    z-index: 100;
+}
+
+.header.vertical {
+    top: 50%;
+}
+
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+
+@media screen and (max-width: 480px) {}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1199px) {}
+
+@media screen and (min-width: 1200px) {
+    .main {
+        margin-bottom: 50px;
+    }
+
+    /* Geral */
+    .inicio,
+    .product,
+    .information,
+    .contact {
+        background-color: #e4c3ea;
+        width: 100%;
+        height: 500px;
+        border-radius: 60px;
+        box-shadow: 10px 10px 15px 15px #3A0930;
+        display: flex;
+        justify-items: center;
+    }
+
+    .product,
+    .information,
+    .contact {
+        margin-top: 10%;
+
+    }
+
+    /* Arquivo NAV */
+    .nav {
+        display: flex;
+        background-color: #3A0930;
+        padding: 10px;
+        position: absolute;
+        width: 60dvw;
+        top: 7%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        border-radius: 30px;
+
+    }
+
+    .nav a {
+        width: 20%;
+        text-align: center;
+        padding: 10px 0;
+        color: #fff;
+    }
+
+    .nav.vertical a {
+        width: 30%;
+    }
+
+    .nav a:hover {
+        background-color: #e4c3ea;
+        color: #3A0930;
+        border-radius: 20px;
+    }
+
+    .nav.vertical {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 0px 10px;
+        width: 60px;
+        height: 380px;
+        left: 2%;
+        top: 50%;
+        border-radius: 30px;
+        background-color: transparent;
+
+    }
+
+    .nav.vertical a {
+        color: #3A0930;
+
+    }
+
+    .nav.vertical a:hover {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+
+    }
+
+
+    .toggle-button {
+        position: absolute;
+        top: 50%;
+        left: 96%;
+        transform: translate(-50%, -50%);
+        border: none;
+        cursor: pointer;
+        background-color: #3A0930;
+        color: #FF862C;
+
+    }
+
+
+
+    .toggle-button:hover {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #FF862C;
+        color: #3A0930;
+    }
+
+    .toggle-button:hover svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .toggle-button.vertical {
+        flex-direction: column;
+        justify-content: flex-start;
+        border-radius: 30px;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 88%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .toggle-button.vertical svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .restrito {
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+    }
+
+    .restrito.vertical {
+        position: absolute;
+        top: 72%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .restrito.vertical svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .restrito:hover {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #FF862C;
+        color: #3A0930;
+    }
+
+    .restrito:hover svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Arquivo Product Card */
+    .productcard {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1400px;
+        height: 500px;
+
+    }
+
+    .imglogo {
+        width: 70%;
+        z-index: 9;
+        object-fit: cover;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    .imgletreiro {
+        width: 30%;
+        z-index: 10;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgsorvete1 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 10%;
+        left: 98%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgsorvete2 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 60%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai1 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: -7%;
+        left: -7%;
+        transform: translate(-50%, -50%);
+        transform: rotate(-20deg);
+    }
+
+    .imgacai2 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 8%;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai3 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 95%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai4 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 55%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai5 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 86%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        transform: rotate(45deg);
+    }
+
+    #img-product {
+        width: 400px;
+        height: 430px;
+        object-fit: cover;
+        border-radius: 8px;
+
+
+    }
+
+    #nome-product {
+        font-size: 2.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        font-family: 'WC Mano Negra Bold', sans-serif;
+        color: #3A0930;
+    }
+
+    #descricao-product,
+    #preco-product {
+        font-size: 1em;
+        color: #ffeee2;
+    }
+
+    .slick-slider.slick-initialized {
+        width: 80%;
+        z-index: 99;
+    }
+
+    .imgsorvete3 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 140%;
+        left: 98%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgsorvete4 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 200%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai6 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 121%;
+        left: -7%;
+        transform: translate(-50%, -50%);
+        transform: rotate(-20deg);
+    }
+
+    .imgacai7 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 138%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai8 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 225%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai9 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 200%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai10 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 215%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        transform: rotate(45deg);
+    }
+
+
+    /* Arquivo MAPS que seção "Sobre" */
+
+    .imgsorvete5 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 270%;
+        left: 98%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgsorvete6 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 330%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai11 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 251%;
+        left: -7%;
+        transform: translate(-50%, -50%);
+        transform: rotate(-20deg);
+    }
+
+    .imgacai12 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 258%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai13 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 355%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai14 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 330%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai15 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 345%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        transform: rotate(45deg);
+    }
+
+    .product-carousel {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+
+    }
+
+    .product-card1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .product-content {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: transparent;
+        border-radius: 8px;
+        padding: 20px;
+        justify-content: center;
+
+    }
+
+    .product-image {
+        width: 230px;
+        height: 230px;
+        object-fit: cover;
+
+    }
+
+    .product-text1 {
+        max-width: 300px;
+        height: 400px;
+        font-size: 2rem;
+        color: #3a0930;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+    }
+
+    .product-name {
+        font-size: 3.5rem;
+        color: #3a0930;
+        margin-bottom: 10px;
+    }
+
+    .product-description {
+        font-size: 1.5rem;
+        color: #ffeee2;
+        margin-bottom: 5px;
+        width: 200px;
+
+    }
+
+    .product-price {
+        font-size: 18px;
+        color: #3a0930;
+        font-weight: bold;
+    }
+
+
+
+    /* Arquivo CONTACT seção "Contato" */
+    /* .contact {
+        
+    } */
+
+    .contact-info {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    .contact-info-1 {
+        color: #3A0930;
+        font-size: 2.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .Titulo-Contact {
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #3A0930;
+    }
+    
+    .delivery {
+        width: 100px;
+        height: 100px;
+    }
+
+    .Horario-Contact {
+        color: #3A0930;
+    }
+
+    .End-Contact{
+        color: #3A0930;
+    }
+
+    .Titulo-Contact,
+    .Horario-Contact, 
+    .End-Contact {
+        /* box-shadow: 10px 10px 15px 15px #3A0930; */
+        /* filter: drop-shadow(10px 15px #3A0930); */
+        text-shadow: 2px 2px #3a093086;
+    }
+
+    .imgsorvete7 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 400%;
+        left: 98%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgsorvete8 {
+        width: 30%;
+        z-index: 1;
+        position: absolute;
+        top: 460%;
+        left: 0%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai16 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 381%;
+        left: -7%;
+        transform: translate(-50%, -50%);
+        transform: rotate(-20deg);
+    }
+
+    .imgacai17 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 388%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai18 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 485%;
+        left: 28%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai19 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 460%;
+        left: 82%;
+        transform: translate(-50%, -50%);
+    }
+
+    .imgacai20 {
+        width: 15%;
+        z-index: 1;
+        position: absolute;
+        top: 475%;
+        left: 89%;
+        transform: translate(-50%, -50%);
+        transform: rotate(45deg);
+    }
+
+    .rodape {
+        height: 250px;
+    }
+
+    iframe {
+        width: 300px;
+        height: 450px;
+        border: 0;
+        border-radius: 30px;
+        box-shadow: 10px 10px 15px 15px #3A0930;
+    }
+
+    /* Arquivo FOOTER seção "Rodapé" */
+    .footer {
+        width: 100dvw;
+        height: 50px;
+        bottom: 15%;
+        left: 97%;
+        background-color: transparent;
+        position: fixed;
+        z-index: 100;
+        display: flex;
+        justify-content: right;
+        flex-direction: column;
+    }
+
+    .bottom-whatsapp {
+        width: 50px;
+        color: #3A0930;
+        flex: 1;
+        margin-bottom: 25px;
+    }
+
+    .bottom-whatsapp a {
+        color: #3A0930;
+    }
+
+    .bottoninicio {
+        width: 50px;
+        flex: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-decoration: none;
+        color: #3A0930;
+    }
+
+    
+
+    .bi.bi-arrow-up-short {
+        color: #3A0930;
+    }
+
+    
+}

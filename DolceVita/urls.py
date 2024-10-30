@@ -15,23 +15,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from adm.views import adm, main, CadastroUsuario, logar, painelControle, logauts, alterarsenha, senha, inicio, produtos, usuarios, dashboard_produtos, dashboard_balanco, edit_user
+from django.urls import path, include
+from adm.views import *
 from django.contrib.auth import views as auth_views
+from django.conf.urls.static import static
+from django.conf import settings
+from adm import views
+# from django.conf.urls import url
+
+
 
 urlpatterns = [
     # Páginas
     path('admin/', admin.site.urls),
+    path('home/', ReactView.as_view(), name="home"),
+    path('prod/', ReactViewProd.as_view(), name="produtos"),
     path('adm/', adm, name='adm'),
-    path('', main),
+    path('', views.main, name='main'),
     path('painelcontrole/', painelControle),
     path('senha/', senha),
     path('inicio/', inicio),
-    path('produtos/', produtos),
+    path('produtos/', produtos, name='produtos'),
     path('usuarios/', usuarios),
+    path('createprodutos/', createprodutos, name='Criar Produto'),
     path('dashboard/produtos/', dashboard_produtos),
     path('dashboard/balanco/', dashboard_balanco),
     path('usuarios/editar/<int:pk>/', edit_user, name='edit_user'),
+    path('produtos/editar/<int:pk>/', edit_produtos, name='edit_produtos'),
     
     path('reset_password/', 
          auth_views.PasswordResetView.as_view(template_name="reset_password.html"), 
@@ -51,8 +61,21 @@ urlpatterns = [
     
     # Funções
     path('CadastroUsuario/', CadastroUsuario),
+    path('AdicionarProduto/', AdicionarProduto, name='AdicionarProduto'),
     path('logar/', logar),
     path('logauts/', logauts),
     path('alterarsenha/', alterarsenha),
+    path('produtos/update/<int:pk>/', update_produtos, name='update_produtos'),
+    path('produtos/delete/<int:pk>/', delete_produtos, name='delete_produtos'),
     
-]
+    
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = "adm.views.error404"
+
+
+   

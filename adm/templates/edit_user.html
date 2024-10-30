@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6 col-lg-7 d-flex align-items-center">
               <div class="card-body p-4 p-lg-5 text-black">
-                <form name="form-users" id="formUsers" method="post" action="{% url 'edit_user' db.id %}">
+                <form name="form-users" id="formEditUsers" method="post" action="{% url 'edit_user' db.id %}">
                   {% if msg %}
                   <div class="alert {{class}}">
                     {{msg}}
@@ -38,9 +38,17 @@
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <input name="status" type="text" id="form2Example17" class="form-control form-control-lg"
-                      value="{{db.is_active}}" />
-                    <label class="form-label" for="form2Example17">Status</label>
+                    {% comment %} <input name="status" type="text" id="form2Example17" class="form-control form-control-lg"
+                      value="{{db.is_active}}" /> {% endcomment %}
+                    <input class="form-check-input" type="checkbox" id="statusCheckbox" name="status" value="True" {% if db.is_active %}checked{% endif %}>
+                    <label class="form-label" for="form2Example17">
+                      Status: 
+                      {% if db.is_active %} 
+                        Ativo 
+                      {% else %} 
+                        Inativo 
+                      {% endif %} 
+                    </label>
                   </div>
 
                   <div data-mdb-input-init class="form-outline mb-4">
